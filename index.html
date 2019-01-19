@@ -40,7 +40,7 @@
     /* ~~~~~~~~ Map ~~~~~~~~ */
     //create a map, center it, and set the zoom level. 
     //set zoomcontrol to false because we will add it in a different corner. 
-   var map = L.map('map').setView([20, 66], 3);
+   var map = L.map('map').setView([20, 66], 2);
 
 
     /* ~~~~~~~~ Map Layers ~~~~~~~~ */
@@ -53,15 +53,17 @@
       });
     
     //Stamen basemap
-    var stamenterrain = L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.jpg', {
+    var stamenterrain = L.tileLayer('https://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.jpg', {
     attribution: 'Map data &copy; <a href="www.stamen.com">StamenDesign</a>'
     });
-    
-    
+        
     //choose basemap by turning on and off these lines
-    stamenterrain.addTo(map);
-    //osm.addTo(map);
+    //stamenterrain.addTo(map);
+    osm.addTo(map);
     
+	  
+    /* ----- points ----- */
+	  
     var ports = {"type": "FeatureCollection",
 "features": [
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","marker-symbol": "","place": "Cadiz, Spain","order": 2},"geometry": {"type": "Point","coordinates": [-6.280488967895508,36.5375708494039]}},
