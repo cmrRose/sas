@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
   
+  <!--Mapbox js-->
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.0/mapbox.css' rel='stylesheet' />
   
   <style>
 
@@ -31,17 +34,32 @@
   <script>
     /* JAVASCRIPT */
     
+    L.mapbox.accessToken = 'pk.eyJ1IjoiY2Fyb2xpbmVyb3NlIiwiYSI6Ik55TUFmMVEifQ.ybZm7IghE2N0ezsMfaDNFQ';
+    
     /* ~~~~~~~~ Map ~~~~~~~~ */
     //create a map, center it, and set the zoom level. 
     //set zoomcontrol to false because we will add it in a different corner. 
-   var map = L.map('map').setView([45.06698,-92.810302], 7);
+   var map = L.map('map').setView([20, 66], 3);
 
 
     /* ~~~~~~~~ Map Layers ~~~~~~~~ */
+    
+    /* ~~~~~ basemaps ~~~~~ */
+    
     //basemap from Open Street Map
     var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
+      });
+    
+    //Stamen basemap
+    var stamenterrain = L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.jpg', {
+    attribution: 'Map data &copy; <a href="www.stamen.com">StamenDesign</a>'
+    });
+    
+    
+    //choose basemap by turning on and off these lines
+    stamenterrain.addTo(map);
+    //osm.addTo(map);
     
     var ports = {"type": "FeatureCollection",
 "features": [
