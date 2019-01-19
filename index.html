@@ -8,7 +8,7 @@
   <!-- Caroline Rose | cmrrose.github.com | Jan 2019 -->
   
   <!-- Load Leaflet from a CDN -->
-   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
   
   
@@ -34,7 +34,8 @@
     /* ~~~~~~~~ Map ~~~~~~~~ */
     //create a map, center it, and set the zoom level. 
     //set zoomcontrol to false because we will add it in a different corner. 
-    var map = L.map('map', {zoomControl:false}).setView([45.06698,-92.810302], 4);
+   var map = L.map('map').setView([45.06698,-92.810302], 7);
+
 
     /* ~~~~~~~~ Map Layers ~~~~~~~~ */
     //basemap from Open Street Map
@@ -42,9 +43,6 @@
         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
     
-    /* ~~~~~~~~ Zoom Control ~~~~~~~~ */
-    //place a zoom control in the top right: 
-    new L.Control.Zoom({position: 'topright'}).addTo(map);
 
   </script> 
 </body>
