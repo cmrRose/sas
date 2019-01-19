@@ -93,7 +93,9 @@
     
     var points = L.geoJSON(ports, {
       pointToLayer: function(feature, latlng){
-        return L.circle(latlng, {
+	return L.marker(latlng, {icon: bluegreyIcon})
+	      
+ /*     return L.circle(latlng, {
         radius: 4,
         fillColor: "#004080",
         color: "#FFF",
@@ -101,6 +103,7 @@
         opacity: 1,
         fillOpacity: 0.8
 	})
+*/	      
       }, 
       onEachFeature: function(feature, layer){
         //set popup
