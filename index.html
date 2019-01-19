@@ -71,17 +71,17 @@
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "top","place": "Halifax, Canada","order": 1},"geometry": {"type": "Point","coordinates": [-63.565843105316155,44.64439909208168]}},
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "Takoradi, Ghana","order": 4},"geometry": {"type": "Point","coordinates": [-1.7433929443359373,4.884170131529767]}},
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "bottom","place": "Cape Town, South Africa","order": 5},"geometry": {"type": "Point","coordinates": [18.42604637145996,-33.90418858727753]}},
-{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "Port Louis, Mauritius"},"geometry": {"type": "Point","coordinates": [57.4959397315979,-20.156983224546508]}},
-{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "left","place": "Chennai, India"},"geometry": {"type": "Point","coordinates": [80.30121803283691,13.101715935397634]}},
-{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "bottom","place": "Singapore","order": ""},"geometry": {"type": "Point","coordinates": [103.85564804077148,1.265470602235992]}},
-{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "Ho Chi Minh City, Vietnam"},"geometry": {"type": "Point","coordinates": [106.70857429504395,10.776566025663833]}},
-{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "Hong Kong, China"},"geometry": {"type": "Point","coordinates": [114.20476913452148,22.30283498534632]}},
-{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "top","place": "Shanghai, China"},"geometry": {"type": "Point","coordinates": [121.4900779724121,31.243040126686836]}},
-{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "bottom","place": "Kobe, Japan"},"geometry": {"type": "Point","coordinates": [135.20015716552734,34.67811140519599]}},
-{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "Yokohama, Japan"},"geometry": {"type": "Point","coordinates": [139.66472625732422,35.455636252952445]}},
-{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "top","place": "Honolulu, Hawaii, USA"},"geometry": {"type": "Point","coordinates": [202.1052646636963,21.306327755970806]}},
-{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "bottom","place": "Hilo, Hawaii, USA"},"geometry": {"type": "Point","coordinates": [204.92351531982422,19.727281298529363]}},
-{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "San Diego, California, USA"},"geometry": {"type": "Point","coordinates": [242.81956672668457,32.71739939330703]}}
+{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "Port Louis, Mauritius","order": 6},"geometry": {"type": "Point","coordinates": [57.4959397315979,-20.156983224546508]}},
+{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "left","place": "Chennai, India","order": 7},"geometry": {"type": "Point","coordinates": [80.30121803283691,13.101715935397634]}},
+{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "bottom","place": "Singapore","order": 8},"geometry": {"type": "Point","coordinates": [103.85564804077148,1.265470602235992]}},
+{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "Ho Chi Minh City, Vietnam","order": 9},"geometry": {"type": "Point","coordinates": [106.70857429504395,10.776566025663833]}},
+{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "Hong Kong, China","order": 10},"geometry": {"type": "Point","coordinates": [114.20476913452148,22.30283498534632]}},
+{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "left","place": "Shanghai, China","order": 11},"geometry": {"type": "Point","coordinates": [121.4900779724121,31.243040126686836]}},
+{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "bottom","place": "Kobe, Japan","order": 12},"geometry": {"type": "Point","coordinates": [135.20015716552734,34.67811140519599]}},
+{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "top","place": "Yokohama, Japan","order": 13},"geometry": {"type": "Point","coordinates": [139.66472625732422,35.455636252952445]}},
+{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "top","place": "Honolulu, Hawaii, USA","order": 14},"geometry": {"type": "Point","coordinates": [202.1052646636963,21.306327755970806]}},
+{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "bottom","place": "Hilo, Hawaii, USA","order": 15},"geometry": {"type": "Point","coordinates": [204.92351531982422,19.727281298529363]}},
+{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "San Diego, California, USA","order": 16},"geometry": {"type": "Point","coordinates": [242.81956672668457,32.71739939330703]}}
 ]}; //end geojson 
 
     
@@ -110,7 +110,7 @@
 	 
 	var pointLayer = L.geoJSON(null, {
 	  pointToLayer: function(feature,latlng){
-		label = String(feature.properties.place) // Must convert to string, .bindTooltip can't use straight 'feature.properties.attribute'
+		label = String(feature.properties.order+". "+feature.properties.place) // Must convert to string, .bindTooltip can't use straight 'feature.properties.attribute'
 		labeldirection = String(feature.properties.labeldirection)
 		return new L.CircleMarker(latlng, {
 		  radius: 4,
