@@ -123,10 +123,10 @@
 		label = String(feature.properties.order+". "+feature.properties.place) // Must convert to string, .bindTooltip can't use straight 'feature.properties.attribute'
 		labeldirection = String(feature.properties.labeldirection)
 		return new L.CircleMarker(latlng, {
-			radius: 4,
+			radius: 5,
 			fillColor: '#004080', 
 			fillOpacity: 0.5, 
-			color: '#fff', //stroke color
+			color: '#004080', //stroke color
 			weight: 0.5, //stroke width
 			
 		}).bindTooltip(label, {permanent: true, opacity: 0.7, direction: labeldirection}).openTooltip();
