@@ -76,9 +76,9 @@
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "bottom","place": "Singapore","order": ""},"geometry": {"type": "Point","coordinates": [103.85564804077148,1.265470602235992]}},
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "Ho Chi Minh City, Vietnam"},"geometry": {"type": "Point","coordinates": [106.70857429504395,10.776566025663833]}},
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "Hong Kong, China"},"geometry": {"type": "Point","coordinates": [114.20476913452148,22.30283498534632]}},
-{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "left","place": "Shanghai, China"},"geometry": {"type": "Point","coordinates": [121.4900779724121,31.243040126686836]}},
+{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "top","place": "Shanghai, China"},"geometry": {"type": "Point","coordinates": [121.4900779724121,31.243040126686836]}},
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "bottom","place": "Kobe, Japan"},"geometry": {"type": "Point","coordinates": [135.20015716552734,34.67811140519599]}},
-{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "top","place": "Yokohama, Japan"},"geometry": {"type": "Point","coordinates": [139.66472625732422,35.455636252952445]}},
+{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "Yokohama, Japan"},"geometry": {"type": "Point","coordinates": [139.66472625732422,35.455636252952445]}},
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "top","place": "Honolulu, Hawaii, USA"},"geometry": {"type": "Point","coordinates": [202.1052646636963,21.306327755970806]}},
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "bottom","place": "Hilo, Hawaii, USA"},"geometry": {"type": "Point","coordinates": [204.92351531982422,19.727281298529363]}},
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "San Diego, California, USA"},"geometry": {"type": "Point","coordinates": [242.81956672668457,32.71739939330703]}}
@@ -114,9 +114,9 @@
 		labeldirection = String(feature.properties.labeldirection)
 		return new L.CircleMarker(latlng, {
 		  radius: 4,
-			fillColor: #004080, 
+			fillColor: '#004080', 
 			fillOpacity: 0.5, 
-			color: #fff, //stroke color
+			color: '#fff', //stroke color
 			
 		}).bindTooltip(label, {permanent: true, opacity: 0.7, direction: labeldirection}).openTooltip();
 		}
