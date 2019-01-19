@@ -88,15 +88,25 @@
         shadowUrl: 'markers-shadow@2x.png',
         shadowSize: [36, 16],
         shadowAnchor: [14, 15]
-    }); 
+    });
+	  
+	var circle = new L.CircleMarker({
+        radius: 5,
+        fillColor: "#004080",
+        color: "#000",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.8,
+        
+    });
     
     var points = L.geoJSON(ports, {
       pointToLayer: function(feature, latlng){
-        return L.marker(latlng, {icon: bluegreyIcon})
+        return L.marker(latlng, {icon: circle})
       }, 
       onEachFeature: function(feature, layer){
         //set popup
-        layer.bindPopup(feature.properties.place)
+        layer.bindPopup(feature.properties.place).openPopup()
       }
     }).addTo(map); 
     
