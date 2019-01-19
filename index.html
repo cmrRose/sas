@@ -11,18 +11,24 @@
   <!-- Load Leaflet from a CDN -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-  
+	
+  <!--Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   
   <style>
 
     /* Make the map fill the entire page */
     #map {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
         }
+		
+		body {
+				font-family: 'Montserrat', sans-serif;
+		}
      
   </style>
 </head>
@@ -61,12 +67,12 @@
     var ports = {"type": "FeatureCollection",
 "features": [
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "top","place": "Cadiz, Spain","order": 2},"geometry": {"type": "Point","coordinates": [-6.280488967895508,36.5375708494039]}},
-{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "bottom","place": "Casablanca, Morocco","order": 3},"geometry": {"type": "Point","coordinates": [-7.593355178833008,33.61540554764807]}},
+{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "Casablanca, Morocco","order": 3},"geometry": {"type": "Point","coordinates": [-7.593355178833008,33.61540554764807]}},
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "top","place": "Halifax, Canada","order": 1},"geometry": {"type": "Point","coordinates": [-63.565843105316155,44.64439909208168]}},
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "Takoradi, Ghana","order": 4},"geometry": {"type": "Point","coordinates": [-1.7433929443359373,4.884170131529767]}},
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "bottom","place": "Cape Town, South Africa","order": 5},"geometry": {"type": "Point","coordinates": [18.42604637145996,-33.90418858727753]}},
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "Port Louis, Mauritius"},"geometry": {"type": "Point","coordinates": [57.4959397315979,-20.156983224546508]}},
-{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "top","place": "Chennai, India"},"geometry": {"type": "Point","coordinates": [80.30121803283691,13.101715935397634]}},
+{"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "left","place": "Chennai, India"},"geometry": {"type": "Point","coordinates": [80.30121803283691,13.101715935397634]}},
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "bottom","place": "Singapore","order": ""},"geometry": {"type": "Point","coordinates": [103.85564804077148,1.265470602235992]}},
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "Ho Chi Minh City, Vietnam"},"geometry": {"type": "Point","coordinates": [106.70857429504395,10.776566025663833]}},
 {"type": "Feature","properties": {"marker-color": "#004080","marker-size": "medium","labeldirection": "right","place": "Hong Kong, China"},"geometry": {"type": "Point","coordinates": [114.20476913452148,22.30283498534632]}},
@@ -107,7 +113,7 @@
 		label = String(feature.properties.place) // Must convert to string, .bindTooltip can't use straight 'feature.properties.attribute'
 		labeldirection = String(feature.properties.labeldirection)
 		return new L.CircleMarker(latlng, {
-		  radius: 2,
+		  radius: 6,
 		}).bindTooltip(label, {permanent: true, opacity: 0.7, direction: labeldirection}).openTooltip();
 		}
 	  });
